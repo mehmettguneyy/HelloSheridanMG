@@ -7,5 +7,19 @@
 </head>
 <body>
 <h1>Input</h1>
+<h2>Enter your name</h2>
+<form action="Output.html" th:action="@{Output}">
+    <p>
+        <label for="fn">First Name</label>
+        <input id="fn" th:name="firstName">
+    </p>
+    <p>
+        <label for="ln">Last Name</label>
+        <input id="ln" th:name="lastName">
+    </p>
+    <p>
+        <input type="submit" value="Send">
+    </p>
+</form>
 </body>
 </html>
