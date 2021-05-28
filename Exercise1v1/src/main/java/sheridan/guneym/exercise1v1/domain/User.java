@@ -5,8 +5,18 @@ import java.io.Serializable;
 @SuppressWarnings("unused")
 public class User implements Serializable {
 
-    private String firstName = "";
+    @Min(0)
+    @Max(1)
+    private int input2 = 1;
+    public int getMessage() {
+        return input2;
+    }
 
+    public void setMessage(int message) {
+        this.input2 = message;
+    }
+
+    private String firstName = "";
 
     public User() {
     }
@@ -28,7 +38,7 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return "User{" +
-                "firstName='" + firstName + '\'' +
+                "firstName='" + firstName + '\'' +"input2=" + input2 +
                 '}';
     }
 }
