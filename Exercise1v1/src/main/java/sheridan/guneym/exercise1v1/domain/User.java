@@ -1,5 +1,7 @@
 package sheridan.guneym.exercise1v1.domain;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import java.io.Serializable;
 
 @SuppressWarnings("unused")
@@ -8,12 +10,12 @@ public class User implements Serializable {
     @Min(0)
     @Max(1)
     private int input2 = 1;
-    public int getMessage() {
+    public int getInput2() {
         return input2;
     }
 
-    public void setMessage(int message) {
-        this.input2 = message;
+    public void setInput2(int message) {
+        this.input2 = input2;
     }
 
     private String firstName = "";
