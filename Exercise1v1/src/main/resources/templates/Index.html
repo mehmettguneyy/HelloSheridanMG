@@ -19,8 +19,15 @@
     <label for="fn">Name</label>
     <input id="fn" th:field="*{firstName}">
   </p>
-  <label><input type="radio" th:field="*{input2}" th:value="0">Faculty</label>
-  <label><input type="radio" th:field="*{input2}" th:value="1">Staff</label>
+
+  <p>
+    <label for="fn">Status</label>
+  </p>
+  <p>
+    <label><input type="radio" th:field="*{input2}" th:value="0">Faculty</label>
+    <label><input type="radio" th:field="*{input2}" th:value="1">Staff</label>
+  </p>
+
   <p>
     <input type="submit" value="Submit">
   </p>

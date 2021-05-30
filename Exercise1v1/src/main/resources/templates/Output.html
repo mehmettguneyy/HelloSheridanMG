@@ -18,16 +18,15 @@
 <p>
 
 <label>
-    Status
+    Status:
 </label>
-
 <div  th:switch="${user.input2}">
     <p th:case="0">Faculty</p>
     <p th:case="1">Staff</p>
 </div>
 
 <p>
-    <a href="Input.html" th:href="@{Index}">Back to Input</a>
-</p>
+    <a href="Index.html" th:href="@{Index}">Back to Input</a>
+    </p>
 </body>
 </html>

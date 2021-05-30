@@ -27,7 +27,7 @@ public class User implements Serializable {
 
     @Min(0)
     @Max(1)
-    private int input2 = 1;
+    private int input2 = 0;
     public int getInput2() {
         return input2;
     }
@@ -41,7 +41,7 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return "User{" +
-                "firstName='" + firstName + '\'' +"input2=" + input2 +
+                "firstName=" + firstName + ", input2=" + input2 +
                 '}';
     }
 }
