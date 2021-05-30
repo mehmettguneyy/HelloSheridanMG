@@ -9,28 +9,31 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.ui.Model;
 
 @Controller
 public class NameController {
 
     private final Logger logger = LoggerFactory.getLogger(NameController.class);
 
-    @GetMapping("/Input")
+    @GetMapping("/Index")
     public ModelAndView input(){
-        logger.trace("input() is called");
-        return new ModelAndView("Input", "user", new User());
+        logger.trace("index() is called");
+        return new ModelAndView("Index", "user", new User());
     }
 
     @GetMapping("/Output")
     public ModelAndView output(
             @Validated @ModelAttribute User user,
-                         BindingResult bindingResult) {
+                         BindingResult bindingResult, Model model) {
         logger.trace("output() is called");
         logger.debug("user = " + user);
         if(bindingResult.hasErrors()){
-            return new ModelAndView("Input");
+            return new ModelAndView("Index");
         }
+        model.addAttribute("user", user);
         return new ModelAndView("Output", "user", user);
+
     }
 }
 

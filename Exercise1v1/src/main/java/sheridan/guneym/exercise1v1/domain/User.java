@@ -7,18 +7,7 @@ import java.io.Serializable;
 @SuppressWarnings("unused")
 public class User implements Serializable {
 
-    @Min(0)
-    @Max(1)
-    private int input2 = 1;
-    public int getInput2() {
-        return input2;
-    }
 
-    public void setInput2(int message) {
-        this.input2 = input2;
-    }
-
-    private String firstName = "";
 
     public User() {
     }
@@ -36,6 +25,18 @@ public class User implements Serializable {
         this.firstName = firstName;
     }
 
+    @Min(0)
+    @Max(1)
+    private int input2 = 1;
+    public int getInput2() {
+        return input2;
+    }
+
+    public void setInput2(int input2) {
+        this.input2 = input2;
+    }
+
+    private String firstName = "";
 
     @Override
     public String toString() {
