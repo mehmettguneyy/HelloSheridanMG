@@ -27,7 +27,7 @@ public class User implements Serializable {
 
     @Min(0)
     @Max(1)
-    private int input2 = 0;
+    private int input2 = 1;
     public int getInput2() {
         return input2;
     }

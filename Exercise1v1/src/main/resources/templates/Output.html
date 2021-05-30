@@ -16,17 +16,23 @@
     </span>
 </p>
 <p>
-
+<div>
 <label>
     Status:
 </label>
-<div  th:switch="${user.input2}">
-    <p th:case="0">Faculty</p>
-    <p th:case="1">Staff</p>
+<span th:switch="${user.input2}">
+    <span th:case="0">Faculty</span>
+    <span th:case="1">Staff</span>
+</span>
 </div>
 
 <p>
-    <a href="Index.html" th:href="@{Index}">Back to Input</a>
+    <button onClick="goBack()"> Go Back </button>
+    <script>
+        function goBack(){
+            window.history.back();
+        }
+    </script>
     </p>
 </body>
 </html>
