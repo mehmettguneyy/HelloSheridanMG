@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>Input</h1>
-<h2>Enter your name</h2>
+<h2>Enter Employee name</h2>
 <form action="Output.html" th:action="@{Output}" th:object="${user}">
   <div th:if="${#fields.hasErrors('*')}">
     <h3 class="error">Input Errors</h3>

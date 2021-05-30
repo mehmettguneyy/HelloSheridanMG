@@ -7,12 +7,16 @@
 </head>
 <body>
 <h1>Output</h1>
-<p>
+
     <label>
         Name:
-    </label>
+    </label><br>
     <span class="output" th:text="${user.firstName}">
       </span>
+
+    <label>
+        Status:
+    </label>
 <div th:switch="${user.input2}">
     <p th:case="0">Faculty</p>
     <p th:case="1">Staff</p>
