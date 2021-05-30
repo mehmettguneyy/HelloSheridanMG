@@ -13,7 +13,11 @@
     </label>
     <span class="output" th:text="${user.firstName}">
       </span>
+<div th:switch="${user.input2}">
+    <p th:case="0">Faculty</p>
+    <p th:case="1">Staff</p>
 
+</div>
 <p>
     <a href="Input.html" th:href="@{Index}">Back to Input</a>
 </p>
