@@ -23,17 +23,18 @@ public class NameController {
     }
 
     @GetMapping("/Output")
-    public ModelAndView output(
-            @Validated @ModelAttribute User user,
-                         BindingResult bindingResult, Model model) {
+    public String output(@Validated @ModelAttribute User user,
+                         BindingResult bindingResult,
+                         Model model) {
         logger.trace("output() is called");
         logger.debug("user = " + user);
         if(bindingResult.hasErrors()){
-            return new ModelAndView("Index");
+            return "Index";
         }
-        model.addAttribute("user", user);
-        return new ModelAndView("Output", "user", user);
 
+        model.addAttribute("user", user);
+        return "Output";
     }
+
 }
 
