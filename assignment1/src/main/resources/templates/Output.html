@@ -18,12 +18,20 @@
          th:alt="${game}">
 </p>
 
+
 <div th:switch="${game.option}">
     <p th:case="0">Rock</p>
     <p th:case="1">Paper</p>
     <p th:case="2">Scissor</p>
 
 </div>
+
+<p>
+    <img src="../static/images/game/0.jpg"
+         th:src="'images/game/'+ ${game.option} + '.jpg'"
+         alt="Rock Paper Scissor"
+         th:alt="${game}">
+</p>
 
 
 
