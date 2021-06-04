@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Rock Paper Scissor</title>
+    <link rel="stylesheet" href="../static/css/main.css" th:href="@{css/main.css}">
 </head>
 <body>
 
@@ -12,7 +13,7 @@
     <span class="gameName" th:text="${game.name}">Rock Paper Scissor</span>
 </p>
 <p>
-    <img src="../static/images/game/0.jpg"
+    <img src="../static/css/images/game/0.jpg"
          th:src="'images/game/'+ ${game.number} + '.jpg'"
          alt="Rock Paper Scissor"
          th:alt="${game}">
@@ -27,7 +28,7 @@
 </div>
 
 <p>
-    <img src="../static/images/game/0.jpg"
+    <img src="../static/css/images/game/0.jpg"
          th:src="'images/game/'+ ${game.option} + '.jpg'"
          alt="Rock Paper Scissor"
          th:alt="${game}">

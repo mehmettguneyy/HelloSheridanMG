@@ -24,13 +24,7 @@ public class Game implements Serializable {
         number = rand + 1;
     }
 
-    public int getNumber() {
-        return number;
-    }
 
-    public String getName() {
-        return name;
-    }
 
     public int getOption() {
         return option;
@@ -38,6 +32,16 @@ public class Game implements Serializable {
 
     public void setOption(int option) {
         this.option = option;
+    }
+
+
+
+    public int getNumber() {
+        return number;
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override
