@@ -20,7 +20,7 @@ public class GameController {
         logger.debug("game = " + game);
 
         model.addAttribute("game", game);
-        return "Game";
+        return "Output";
     }
 
 }
