@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Rock Paper Scissor</title>
-    <link rel="stylesheet" href="../static.css/main.css" th:href="@{static.css/main.css}">
+    <link rel="stylesheet" href="../static/css/main.css" th:href="@{static/css/main.css}">
 </head>
 <body>
 <header>
     <h1>Rock Paper Scissor Game</h1>
 </header>
+
+<form action="Output.html" th:action="@{Process}" th:object="${game}">
+    <div th:if="${#fields.hasErrors('*')}">
+        <h3 class="error">Input Errors</h3>
+        <ul>
+            <li class="error" th:each="e: ${#fields.errors('*')}" th:text="${e}">Input Error</li>
+        </ul>
+    </div>
 <p>
     <label><input type="radio" th:field="*{option}" th:value="0">Rock</label>
     <label><input type="radio" th:field="*{option}" th:value="1">Paper</label>
@@ -18,5 +26,6 @@
 <p>
     <input type="submit" value="Play">
 </p>
+</form>
 </body>
 </html>

@@ -7,6 +7,7 @@ import java.io.Serializable;
 
 @SuppressWarnings("unused")
 public class Game implements Serializable {
+
     @Min(0)
     @Max(2)
     private int option = 1;
@@ -19,13 +20,46 @@ public class Game implements Serializable {
 
 
     public Game() {
-        int rand = (int) (2 * Math.random());
-        name = INPUTS[rand / 2];
-        number = rand + 1;
+        int rand = (int) (3 * Math.random());
+        name = INPUTS[rand % 3];
+        number = rand;
     }
 
+    public int numberReturn(){
+        return number;
+    }
 
+    public String whoWon() {
 
+        String whoWin = "";
+        if (getOption() == 0 && numberReturn() == 1) {
+            whoWin = "PC won";
+        } else if (getOption() == 0 && numberReturn() == 2) {
+            whoWin = "You won";
+        }else if
+        (getOption() == 0 && numberReturn() == 0) {
+            whoWin = "Tie";
+        }else if
+        (getOption() == 1 && numberReturn() == 0) {
+            whoWin = "You won";
+        }else if
+        (getOption() == 1 && numberReturn() == 1) {
+            whoWin = "Tie";
+        }else if
+        (getOption() == 1 && numberReturn() == 2) {
+            whoWin = "PC won";
+        }else if
+        (getOption() == 2 && numberReturn() == 0) {
+            whoWin = "PC won";
+        }else if
+        (getOption() == 2 && numberReturn() == 1) {
+            whoWin = "You Won";
+        }else if
+        (getOption() == 0 && numberReturn() == 1) {
+            whoWin = "Tie";
+        }
+        return whoWin;
+    }
     public int getOption() {
         return option;
     }
@@ -44,11 +78,13 @@ public class Game implements Serializable {
         return name;
     }
 
-    @Override
-    public String toString(){
-        return name;
-    }
 
+    @Override
+    public String toString() {
+        return "Game{" +
+                "option=" + option +
+                                '}';
+    }
 
 }
 
