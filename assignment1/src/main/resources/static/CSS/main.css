@@ -1,0 +1,58 @@
+#Computer {
+    grid-area: Computer;
+    text-align: center;
+}
+#You {
+    grid-area: You;
+    text-align: center;
+}
+#Result{
+    grid-area: Result;
+    text-align: center;
+
+}
+
+#container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+	"Computer You"
+    "Result Result";
+}
+
+body{
+    text-align: center;
+    font-family: sans-serif;
+
+    }
+h1{
+    padding-left: 1em;
+    font-family: sans-serif;
+    color: darkred;
+    text-shadow: 2px 2px 5px indianred;
+}
+
+a{
+    padding-left: 1em;
+    font-family: sans-serif;
+    color: darkblue;
+    text-shadow: 2px 2px 5px aquamarine;
+}
+span.whoWon{
+    font-size: larger;
+    font-weight: bolder;
+    color: red;
+    text-shadow: 2px 2px 5px orangered;
+}
+
+p{
+    font-size: larger;
+    font-weight: bolder;
+    color: green;
+
+}
+
+div{
+    text-align: center;
+    font-family: sans-serif;
+}
