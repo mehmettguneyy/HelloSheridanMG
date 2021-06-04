@@ -33,30 +33,24 @@ public class Game implements Serializable {
 
         String whoWin = "";
         if (getOption() == 0 && numberReturn() == 1) {
-            whoWin = "<--- Computer won --->";
+            whoWin = "Computer won";
         } else if (getOption() == 0 && numberReturn() == 2) {
-            whoWin = "<--- You won --->";
-        }else if
-        (getOption() == 0 && numberReturn() == 0) {
-            whoWin = "<--- Tie --->";
+            whoWin = "You won";
         }else if
         (getOption() == 1 && numberReturn() == 0) {
-            whoWin = "<--- You won --->";
-        }else if
-        (getOption() == 1 && numberReturn() == 1) {
-            whoWin = "<--- Tie --->";
+            whoWin = "You won";
         }else if
         (getOption() == 1 && numberReturn() == 2) {
-            whoWin = "<--- Computer won --->";
+            whoWin = "Computer won";
         }else if
         (getOption() == 2 && numberReturn() == 0) {
-            whoWin = "<--- Computer won --->";
+            whoWin = "Computer won";
         }else if
         (getOption() == 2 && numberReturn() == 1) {
-            whoWin = "<--- You won --->";
+            whoWin = "You won";
         }else if
-        (getOption() == 2 && numberReturn() == 2) {
-            whoWin = "<--- Tie --->";
+        (getOption() == numberReturn() ) {
+            whoWin = "Tie";
         }
         return whoWin;
     }

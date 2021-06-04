@@ -39,10 +39,10 @@ a{
     text-shadow: 2px 2px 5px aquamarine;
 }
 span.whoWon{
-    font-size: larger;
+    font-size: 50px;
     font-weight: bolder;
-    color: red;
-    text-shadow: 2px 2px 5px orangered;
+    color: orangered;
+    text-shadow: 2px 2px 5px orange;
 }
 
 p{
