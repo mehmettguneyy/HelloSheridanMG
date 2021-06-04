@@ -16,9 +16,9 @@ public class GameController {
 
     private final Logger logger = LoggerFactory.getLogger(GameController.class);
 
-    @GetMapping(value={"/", "/Game"})
+    @GetMapping(value={"/", "/Input"})
     public String card(Model model){
-        logger.trace("game() is called");
+        logger.trace("input() is called");
 
         Game game = new Game();
         logger.debug("game = " + game);

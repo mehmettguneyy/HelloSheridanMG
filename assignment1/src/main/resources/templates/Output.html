@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Rock Paper Scissor</title>
-    <link rel="stylesheet" href="../static/css/main.css" th:href="@{static/css/main.css}">
+    <link rel="stylesheet" href="../static/css/main.css" th:href="@{/css/main.css}">
 </head>
 <body>
 
 
+
+<h1> Computer picked</h1>
 <p>
-    Computer picked
     <span class="gameName" th:text="${game.name}"></span>
 </p>
 <p>
     <img src="../static/images.game/0.jpg"
          th:src="'images.game/'+ ${game.number} + '.jpg'"
          alt="Rock Paper Scissor"
-         th:alt="${game}">
+         th:alt="${game}" width="200" height="300">
 </p>
 
-<p>You picked</p>
+<h1>You picked</h1>
 
 <div th:switch="${game.option}">
     <p th:case="0">Rock</p>
@@ -32,7 +33,7 @@
     <img src="../static/images.game/0.jpg"
          th:src="'images.game/'+ ${game.option} + '.jpg'"
          alt="Rock Paper Scissor"
-         th:alt="${game}">
+         th:alt="${game}" width="200" height="300">
 </p>
 
 <span class="whoWon" th:text="${game.whoWon()}"></span>
