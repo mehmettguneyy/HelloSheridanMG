@@ -17,6 +17,10 @@
             <li class="error" th:each="e: ${#fields.errors('*')}" th:text="${e}">Input Error</li>
         </ul>
     </div>
+
+    <p>
+        <img src="../static/images.game/background.jpg" th:src="'images.game/background.jpg'" alt="Rock Paper Scissor" width="400" height="400">
+    </p>
 <p>
     <label><input type="radio" th:field="*{option}" th:value="0">Rock</label>
     <label><input type="radio" th:field="*{option}" th:value="1">Paper</label>

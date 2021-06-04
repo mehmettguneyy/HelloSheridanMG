@@ -1,16 +1,15 @@
-span.gameName{
-    font-size: larger;
-    font-weight: bolder;
-    color: red;
+body{
+    font-family: sans-serif;
+    padding-left: 1em;
+    background-color: antiquewhite;
 }
-
 h1{
     padding-left: 1em;
     font-family: sans-serif;
     color: forestgreen;
 }
 
-p{
+a{
     padding-left: 1em;
     font-family: sans-serif;
     color: aqua;
