@@ -23,8 +23,10 @@ public class CustomerDataController {
         this.customerDataService = customerDataService;
     }
 
+
+
     @GetMapping(value={"/", "/CustomerList"})
-    public ModelAndView customerList(){
+    public ModelAndView customerList() {
         logger.trace("customerList() is called");
         List<CustomerForm> list = customerDataService.getAllCustomerForms();
         return new ModelAndView("CustomerList",

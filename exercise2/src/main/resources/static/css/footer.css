@@ -1,0 +1,14 @@
+footer{
+    font-size: 1.5em;
+    font-style: italic;
+    font-weight: bolder;
+    border-top: orangered solid;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-left: 0.5em;
+    padding-left: 0.5em;
+    margin-top: 1.5em;
+    width: 18em;
+    color: darkred;
+    text-shadow: 2px 2px 5px indianred;
+}

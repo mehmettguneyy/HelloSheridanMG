@@ -3,11 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Customer List</title>
-    <link th:href="@{css/main.css}" href="../static/css/main.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../static/css/main.css" th:href="@{css/main.css}">
+    <link rel="stylesheet" href="../static/css/footer.css" th:href="@{css/footer.css}">
 </head>
 <body>
 <main>
-    <h1>List All</h1>
+    <h1>Customer List</h1>
     <table th:unless="${#lists.isEmpty(customers)}">
         <tr>
             <th>Count</th>
@@ -21,7 +22,7 @@
             <td th:text="${s.firstName}">Walter</td>
             <td th:text="${s.lastName}">White</td>
             <td>
-                <a href="StudentDetails.html" th:href="@{CustomerDetails/{id}(id=${s.customerId})}">Details</a>
+                <a href="CustomerDetails.html" th:href="@{CustomerDetails/{id}(id=${s.customerId})}">Details</a>
 
             </td>
         </tr>
@@ -29,7 +30,7 @@
         <tr>
             <td>2</td>
             <td>Mehmet</td>
-            <td>G</td>
+            <td>Guney</td>
             <td>
                 <a href="CustomerDetails.html">Details</a>
 
@@ -38,6 +39,8 @@
         <!--*/-->
     </table>
     </main>
-
+<footer>
+    Sheridan College / Mehmet GUNEY
+</footer>
 </body>
 </html>

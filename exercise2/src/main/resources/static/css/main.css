@@ -1,0 +1,20 @@
+h1{
+    padding-left: 1em;
+    font-family: sans-serif;
+    color: darkred;
+    text-shadow: 2px 2px 5px indianred;
+}
+
+a{
+    padding-left: 1em;
+    font-family: sans-serif;
+    color: darkblue;
+    text-shadow: 2px 2px 5px aquamarine;
+}
+
+p{
+    font-size: larger;
+    font-weight: bolder;
+    color: green;
+
+}
