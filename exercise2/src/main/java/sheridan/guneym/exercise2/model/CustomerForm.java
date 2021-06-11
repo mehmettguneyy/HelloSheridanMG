@@ -43,8 +43,6 @@ public class CustomerForm implements Serializable {
     private String zipCode = "";
 
 
-
-
     public CustomerForm() {
     }
 

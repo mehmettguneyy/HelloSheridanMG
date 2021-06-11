@@ -1,35 +1,24 @@
 package sheridan.guneym.exercise2.service;
 
+import org.springframework.stereotype.Service;
+import sheridan.guneym.exercise2.model.CustomerForm;
 import sheridan.guneym.exercise2.repository.CustomerDataRepository;
 import sheridan.guneym.exercise2.repository.CustomerEntity;
-import sheridan.guneym.exercise2.model.CustomerForm;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CustomerDataServiceImpl implements CustomerDataService {
 
     private final CustomerDataRepository customerDataRepository;
 
-    CustomerDataServiceImpl(CustomerDataRepository customerDataRepository){
+    CustomerDataServiceImpl(CustomerDataRepository customerDataRepository) {
         this.customerDataRepository = customerDataRepository;
     }
 
-    private static void copyFormToEntity(CustomerForm form, CustomerEntity customer){
-        customer.setCustomerId(form.getCustomerId());
-        customer.setFirstName(form.getFirstName());
-        customer.setLastName(form.getLastName());
-        customer.setEmail(form.getEmail());
-        customer.setStreet(form.getStreet());
-        customer.setCity(form.getCity());
-        customer.setState(form.getState());
-        customer.setZipCode(form.getZipCode());
-
-    }
-
-    private static void copyEntityToForm(CustomerEntity customer, CustomerForm form){
+    private static void copyEntityToForm(CustomerEntity customer, CustomerForm form) {
         form.setCustomerId(customer.getCustomerId());
         form.setFirstName(customer.getFirstName());
         form.setLastName(customer.getLastName());
@@ -40,10 +29,11 @@ public class CustomerDataServiceImpl implements CustomerDataService {
         form.setZipCode(customer.getZipCode());
 
     }
+
     public List<CustomerForm> getAllCustomerForms() {
         List<CustomerForm> formList = new ArrayList<>();
         List<CustomerEntity> customerList = customerDataRepository.findAll();
-        for(CustomerEntity customer: customerList){
+        for (CustomerEntity customer : customerList) {
             CustomerForm form = new CustomerForm();
             copyEntityToForm(customer, form);
             formList.add(form);
@@ -51,5 +41,15 @@ public class CustomerDataServiceImpl implements CustomerDataService {
         return formList;
     }
 
+    public CustomerForm getCustomerForm(int customerId) {
+        Optional<CustomerEntity> result = customerDataRepository.findById(customerId);
+        if (result.isPresent()) {
+            CustomerForm form = new CustomerForm();
+            CustomerEntity customer = result.get();
+            copyEntityToForm(customer, form);
+            return form;
+        }
+        return null;
 
+    }
 }

@@ -13,7 +13,7 @@
             <th>Count</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Detailss</th>
+            <th>Details</th>
         </tr>
         <tr th:each="s,c: ${customers}">
             <td th:text="${c.count}">1</td>
@@ -21,7 +21,7 @@
             <td th:text="${s.firstName}">Walter</td>
             <td th:text="${s.lastName}">White</td>
             <td>
-                <a href="StudentDetails.html" th:href="@{CustomerDetails/{id}(id=${s.id})}">Details</a>
+                <a href="StudentDetails.html" th:href="@{CustomerDetails/{id}(id=${s.customerId})}">Details</a>
 
             </td>
         </tr>
@@ -29,7 +29,7 @@
         <tr>
             <td>2</td>
             <td>Mehmet</td>
-            <td>Guney</td>
+            <td>G</td>
             <td>
                 <a href="CustomerDetails.html">Details</a>
 

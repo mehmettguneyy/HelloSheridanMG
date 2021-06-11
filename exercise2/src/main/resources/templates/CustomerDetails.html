@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Customer Details</title>
+    <link th:href="@{../css/main.css}" href="../static/css/main.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-
+<main>
+    <h1>Customer Details</h1>
+    <div th:object="${customer}">
+        <p>
+            <label class="group_label">First Name:</label>
+            <span class="output" th:text="*{firstName}">Jessie</span>
+        </p>
+        <p>
+            <label class="group_label">Last Name:</label>
+            <span class="output" th:text="*{lastName}">Pinkman</span>
+        </p>
+        <p>
+            <label class="group_label">Email:</label>
+            <span class="output" th:text="*{email}">jessiep@gmail.com</span>
+        </p>
+        <p>
+            <label class="group_label">Street:</label>
+            <span class="output" th:text="*{street}">123 glass street</span>
+        </p>
+        <p>
+            <label class="group_label">City:</label>
+            <span class="output" th:text="*{city}">Maspeth</span>
+        </p>
+        <p>
+            <label class="group_label">State:</label>
+            <span class="output" th:text="*{state}">NY</span>
+        </p>
+        <p>
+            <label class="group_label">ZIP:</label>
+            <span class="output" th:text="*{zipCode}">13131</span>
+        </p>
+    </div>
+</main>
 </body>
 </html>
