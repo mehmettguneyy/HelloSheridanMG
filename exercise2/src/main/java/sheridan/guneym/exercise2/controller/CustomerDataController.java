@@ -1,6 +1,5 @@
 package sheridan.guneym.exercise2.controller;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -8,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
+import sheridan.guneym.exercise2.model.CustomerForm;
+import sheridan.guneym.exercise2.service.CustomerDataService;
 
 import java.util.List;
 
@@ -30,22 +31,18 @@ public class CustomerDataController {
                 "customers", list);
     }
 
-    @GetMapping("CustomerDetails/{id}")
-    public String customerDetails(@PathVariable String id, Model model){
+    @GetMapping("CustomerDetails/{customerId}")
+    public String customerDetails(@PathVariable String customerId, Model model){
         logger.trace("customerDetails() is called");
-        try {
-            CustomerForm form = customerDataService.getcustomerForm(Integer.parseInt(id));
+           CustomerForm form = customerDataService.getCustomerForm(Integer.parseInt(customerId));
             if (form != null) {
                 model.addAttribute("customer", form);
                 return "CustomerDetails";
             } else {
-                logger.trace("no data for this id=" + id);
-                return "DataNotFound";
+                logger.trace("no data for this id=" + customerId);
+                return "CustomerList";
             }
-        } catch (NumberFormatException e) {
-            logger.trace("the id is missing or not an integer");
-            return "DataNotFound";
-        }
+
     }
 
 }
