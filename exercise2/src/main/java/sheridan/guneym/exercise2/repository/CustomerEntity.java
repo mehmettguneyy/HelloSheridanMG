@@ -35,7 +35,7 @@ import java.io.Serializable;
 
 
         public CustomerEntity() {
-        };
+        }
 
 
         public Integer getCustomerId() {

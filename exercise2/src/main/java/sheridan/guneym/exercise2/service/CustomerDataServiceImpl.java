@@ -32,6 +32,7 @@ public class CustomerDataServiceImpl implements CustomerDataService {
     private static void copyEntityToForm(CustomerEntity customer, CustomerForm form){
         form.setCustomerId(customer.getCustomerId());
         form.setFirstName(customer.getFirstName());
+        form.setLastName(customer.getLastName());
         form.setEmail(customer.getEmail());
         form.setStreet(customer.getStreet());
         form.setCity(customer.getCity());
