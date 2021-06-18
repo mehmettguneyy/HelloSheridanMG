@@ -1,4 +1,7 @@
 package sheridan.guneym.assignment2.repository;
 
-public interface PetDataRepository {
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PetDataRepository extends JpaRepository<PetEntity, Integer> {
 }
