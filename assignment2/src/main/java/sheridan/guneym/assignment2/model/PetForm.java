@@ -16,12 +16,11 @@ public class PetForm implements Serializable {
     @Pattern(regexp = "(Cat|Dog|Rabbit|)?")
     private String kindName = "";
 
-    @NotNull
-    @Min(0)
-    @Max(1)
-    private int petGender = 1;
+    @NotBlank
+    @Pattern(regexp = "(Male|Female|)?")
+    private String petGender = "";
 
-      private boolean petVac = false;
+    private boolean petVac = false;
 
     public PetForm() {
     }
@@ -50,11 +49,11 @@ public class PetForm implements Serializable {
         this.kindName = kindName;
     }
 
-    public int getPetGender() {
+    public String getPetGender() {
         return petGender;
     }
 
-    public void setPetGender(int petGender) {
+    public void setPetGender(String petGender) {
         this.petGender = petGender;
     }
 

@@ -1,10 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Delete Record</title>
+    <link th:href="@{css/main.css}" href="../static/css/main.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{css/footer.css}" href="../static/css/footer.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+<main>
+    <h1>Delete Record</h1>
+    <p class="message">Do you really want to remove this record?</p>
+    <h2>Record Data:</h2>
+    <div th:object="${pet}">
+        <p>
+            <label class="group_label">Pet Name:</label>
+            <span class="output" th:text="*{petName}">Sisko</span>
+        </p>
+        <p>
+            <label class="group_label">Pet Kind:</label>
+            <span class="output" th:text="*{kindName}">Pet Kind</span>
+        </p>
+        <p>
+            <label class="group_label">Gender:</label>
+            <span class="output" th:text="*{petGender}">Male</span>
+        </p>
+        <p>
+            <label class="group_label">Vaccination:</label>
+            <span class="output" th:text="*{petVac}">yes</span>
+        </p>
+    </div>
+    <form method="post"
+          th:action="@{RemovePet}" action="Index.html">
+        <input type="hidden" name="id" th:value="${pet.id}">
+        <input type="submit" value="Remove Record">
+    </form>
+
+    <p><a href="Index.html" th:href="@{Index}">Index</a></p>
+    <p><a href="AddPet.html" th:href="@{AddPet}">Add Pet</a></p>
+
+</main>
 
 </body>
 </html>

@@ -19,7 +19,7 @@ public class PetEntity implements Serializable {
     private String kindName = "";
 
     @Column(name = "pet_gender")
-    private Integer petGender = 0;
+    private String petGender = "";
 
     @Column(name = "pet_vac")
     private Boolean petVac = false;
@@ -51,11 +51,11 @@ public class PetEntity implements Serializable {
         this.kindName = kindName;
     }
 
-    public Integer getPetGender() {
+    public String getPetGender() {
         return petGender;
     }
 
-    public void setPetGender(Integer petGender) {
+    public void setPetGender(String petGender) {
         this.petGender = petGender;
     }
 

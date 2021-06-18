@@ -46,6 +46,24 @@ public class PetDataController {
         modelAndView.addObject("kinds", kinds);
         return modelAndView;
     }
+    @PostMapping("/InsertPet")
+    public String insertPet(
+            @Validated @ModelAttribute("form") PetForm form,
+            BindingResult bindingResult,
+            Model model){
+        logger.trace("insertPet() is called");
+        // checking for the input validation errors
+        if (bindingResult.hasErrors()) {
+            logger.trace("input validation errors");
+            //model.addAttribute("form", form);
+            model.addAttribute("kinds", kinds);
+            return "AddPet";
+        } else {
+            logger.trace("the user inputs are correct");
+            petDataService.insertPetForm(form);
+            return "redirect:ConfirmInsert/" + form.getId();
+        }
+    }
     @GetMapping("/ConfirmInsert/{id}")
     public String confirmInsert(@PathVariable(name = "id") String strId, Model model){
         logger.trace("confirmInsert() is called");

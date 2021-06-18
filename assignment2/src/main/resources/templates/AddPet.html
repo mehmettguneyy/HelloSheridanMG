@@ -34,12 +34,12 @@
         <p>
             <label class="group_label">Gender</label><br>
             <span th:each="y: ${#numbers.sequence(0,1)}">
-               <label><input type="radio" name="petGender" value="1"
-                             th:field="*{petGender}" th:value="${y}"><span th:text="${y}">1</span></label>
+               <label><input type="radio" name="petGender" value="Female"
+                             th:field="*{petGender}" th:value="${y}"><span th:text="${y}">Female</span></label>
             </span>
             <!--/*-->
-            <label><input type="radio" name="petGender" value="0">0</label>
-            <label><input type="radio" name="petGender" value="1">1</label>
+            <label><input type="radio" name="petGender" value="Male">Male</label>
+            <label><input type="radio" name="petGender" value="Female">Female</label>
             <!--*/-->
             <span th:if="${#fields.hasErrors('petGender')}"
                   class="error">&larr;&nbsp;<span th:errors="*{petGender}">Pet Gender Error</span></span>
