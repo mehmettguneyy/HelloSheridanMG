@@ -25,7 +25,7 @@ public class PetEntity implements Serializable {
     private Boolean petVac = false;
 
     public PetEntity(){
-    };
+    }
 
     public Integer getId() {
         return id;

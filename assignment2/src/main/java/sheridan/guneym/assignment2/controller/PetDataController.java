@@ -11,7 +11,6 @@ import org.springframework.web.servlet.ModelAndView;
 import sheridan.guneym.assignment2.service.PetDataService;
 import sheridan.guneym.assignment2.model.PetForm;
 
-import java.util.List;
 
 @Controller
 public class PetDataController {
@@ -37,7 +36,7 @@ public class PetDataController {
     public ModelAndView addPet(){
         logger.trace("addPet() is called");
         ModelAndView modelAndView =
-                new ModelAndView("addPet",
+                new ModelAndView("AddPet",
                         "form", new PetForm());
         modelAndView.addObject("kinds", kinds);
         return modelAndView;
