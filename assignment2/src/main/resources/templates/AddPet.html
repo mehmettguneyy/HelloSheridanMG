@@ -1,10 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Add Pet</title>
+    <link th:href="@{css/main.css}" href="../static/css/main.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{css/footer.css}" href="../static/css/footer.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+<main>
+    <h1>Add Pet</h1>
+    <form method="post"
+          th:action="@{InsertPet}" action="ConfirmInsert.html"
+          th:object="${form}">
+
+
+        <h2>Pet Name</h2>
+        <p>
+            <label for="first" class="group_label">Pet Name</label><br>
+            <input id="first" type="text" th:field="*{petName}"/>
+            <span th:if="${#fields.hasErrors('petName')}"
+                  class="error">&larr;&nbsp;<span th:errors="*{petName}">Pet Name Error</span></span>
+        </p>
+
+        <h2>Pet Info</h2>
+        <p>
+            <label for="kind" class="group_label">Pet Kind</label><br>
+            <select id="kind" th:field="*{kindName}">
+                <option th:each="p: ${kinds}" th:value="${p}" th:text="${p}">Dog</option>
+            </select>
+            <span th:if="${#fields.hasErrors('kindName')}"
+                  class="error">&larr;&nbsp;<span th:errors="*{kindName}">Kind Name Error</span></span>
+        </p>
+        <p>
+            <label class="group_label">Gender</label><br>
+            <span th:each="y: ${#numbers.sequence(0,1)}">
+               <label><input type="radio" name="petGender" value="1"
+                             th:field="*{petGender}" th:value="${y}"><span th:text="${y}">1</span></label>
+            </span>
+            <!--/*-->
+            <label><input type="radio" name="petGender" value="0">0</label>
+            <label><input type="radio" name="petGender" value="1">1</label>
+            <!--*/-->
+            <span th:if="${#fields.hasErrors('petGender')}"
+                  class="error">&larr;&nbsp;<span th:errors="*{petGender}">Pet Gender Error</span></span>
+        </p>
+        <p>
+            <label class="group_label">Vaccination</label><br>
+            <label><input type="checkbox" th:field="*{petVac}" th:value="yes"/>Vaccinated</label>
+
+        </p>
+        <p>
+            <input type="reset" value="Clear"/>
+            <input type="submit" value="Send"/>
+        </p>
+    </form>
+    <p><a href="Index.html" th:href="@{Index}">Index</a></p>
+</main>
 
 </body>
 </html>

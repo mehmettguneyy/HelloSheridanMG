@@ -17,11 +17,11 @@ public class PetForm implements Serializable {
     private String kindName = "";
 
     @NotNull
-    @Min(1)
-    @Max(3)
+    @Min(0)
+    @Max(1)
     private int petGender = 1;
 
-    private boolean petVac = false;
+      private boolean petVac = false;
 
     public PetForm() {
     }

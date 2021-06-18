@@ -20,8 +20,10 @@ public class PetDataServiceImpl implements PetDataService {
    PetDataServiceImpl(PetDataRepository petDataRepository){
         this.petDataRepository = petDataRepository;
     }
+
+
     private static void copyFormToEntity(PetForm form, PetEntity pet){
-        pet.setId(form.getId());
+       // pet.setId(form.getId());
         pet.setPetName(form.getPetName());
         pet.setKindName(form.getKindName());
         pet.setPetGender(form.getPetGender());

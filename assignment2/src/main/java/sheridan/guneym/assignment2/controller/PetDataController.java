@@ -8,9 +8,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import sheridan.guneym.assignment2.service.PetDataService;
 import sheridan.guneym.assignment2.model.PetForm;
+import sheridan.guneym.assignment2.service.PetDataService;
 
+import java.util.List;
 
 @Controller
 public class PetDataController {
@@ -26,10 +27,14 @@ public class PetDataController {
     public PetDataController(PetDataService petDataService){
         this.petDataService = petDataService;
     }
+
+
     @GetMapping(value={"/", "/Index"})
-    public String index(){
+    public ModelAndView index(){
         logger.trace("index() is called");
-        return "Index";
+        List<PetForm> list = petDataService.getAllPetForms();
+        return new ModelAndView("Index",
+                "pets", list);
     }
 
     @GetMapping("/AddPet")
