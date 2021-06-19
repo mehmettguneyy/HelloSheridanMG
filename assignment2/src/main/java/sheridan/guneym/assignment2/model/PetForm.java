@@ -13,7 +13,7 @@ public class PetForm implements Serializable {
     private String petName = "";
 
     @NotBlank
-    @Pattern(regexp = "(Cat|Dog|Rabbit|)?")
+    @Pattern(regexp = "(Dog|Cat|Rabbit|)?")
     private String kindName = "";
 
     @NotBlank

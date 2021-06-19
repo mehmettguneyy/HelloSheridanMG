@@ -18,9 +18,14 @@ public class PetDataController {
     private final Logger logger = LoggerFactory.getLogger(PetDataController.class);
 
     private static final String[] kinds = {
-            "Cat",
             "Dog",
+            "Cat",
             "Rabbit"};
+
+
+    private static final String[] genders = {
+            "Female",
+            "Male"};
 
     private final PetDataService petDataService;
 
@@ -44,6 +49,7 @@ public class PetDataController {
                 new ModelAndView("AddPet",
                         "form", new PetForm());
         modelAndView.addObject("kinds", kinds);
+        modelAndView.addObject("genders", genders);
         return modelAndView;
     }
     @PostMapping("/InsertPet")
@@ -55,8 +61,10 @@ public class PetDataController {
         // checking for the input validation errors
         if (bindingResult.hasErrors()) {
             logger.trace("input validation errors");
-            //model.addAttribute("form", form);
+
             model.addAttribute("kinds", kinds);
+            model.addAttribute("genders", genders);
+
             return "AddPet";
         } else {
             logger.trace("the user inputs are correct");
@@ -117,6 +125,7 @@ public class PetDataController {
             if (form != null) {
                 model.addAttribute("form", form);
                 model.addAttribute("kinds", kinds);
+                model.addAttribute("genders", genders);
                 return "EditPet";
             } else {
                 logger.trace("no data for this id=" + id);
@@ -133,17 +142,18 @@ public class PetDataController {
             BindingResult bindingResult,
             Model model) {
         logger.trace("updatePet() is called");
-        // checking for the input validation errors
+
         if (bindingResult.hasErrors()) {
             logger.trace("input validation errors");
-            //model.addAttribute("form", form);
+
             model.addAttribute("kinds", kinds);
+            model.addAttribute("genders", genders);
             return "EditPet";
         } else {
             logger.trace("the user inputs are correct");
             petDataService.updatePetForm(form);
             logger.debug("id = " + form.getId());
-            return "redirect:Index/" + form.getId();
+            return "redirect:ConfirmInsert/" + form.getId();
         }
     }
 }

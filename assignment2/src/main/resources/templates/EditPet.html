@@ -30,8 +30,8 @@
 
         <h2>Pet Info:</h2>
         <p>
-            <label for="prog" class="group_label">Pet Kind</label><br>
-            <select id="prog" th:field="*{kindName}">
+            <label for="kind" class="group_label">Pet Kind</label><br>
+            <select id="kind" th:field="*{kindName}">
                 <option th:each="p: ${kinds}"
                         th:value="${p}" th:text="${p}">Cat</option>
             </select>
@@ -40,13 +40,13 @@
         </p>
         <p>
             <label class="group_label">Gender</label><br>
-            <span th:each="y: ${#numbers.sequence(0,1)}">
-               <label><input type="radio" name="petGender" value="Male"
-                             th:field="*{petGender}" th:value="${y}"><span th:text="${y}">Male</span></label>
+            <span th:each="y: ${genders}">
+               <label><input type="radio" name="petGender" value="Female"
+                             th:field="*{petGender}" th:value="${y}"><span th:text="${y}">Female</span></label>
             </span>
             <!--/*-->
-            <label><input type="radio" name="programYear" value="Male">0</label>
-            <label><input type="radio" name="programYear" value="Female">1</label>
+            <label><input type="radio" name="petGender" value="Male">Male</label>
+            <label><input type="radio" name="petGender" value="Female">Female</label>
             <!--*/-->
             <span th:if="${#fields.hasErrors('petGender')}"
                   class="error">&larr;&nbsp;<span th:errors="*{petGender}">Pet Gender Error</span></span>

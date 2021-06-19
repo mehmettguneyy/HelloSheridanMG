@@ -17,7 +17,7 @@
         <h2>Pet Name</h2>
         <p>
             <label for="first" class="group_label">Pet Name</label><br>
-            <input id="first" type="text" th:field="*{petName}"/>
+            <input id="first" type="text" th:required="required" th:field="*{petName}"/>
             <span th:if="${#fields.hasErrors('petName')}"
                   class="error">&larr;&nbsp;<span th:errors="*{petName}">Pet Name Error</span></span>
         </p>
@@ -33,7 +33,7 @@
         </p>
         <p>
             <label class="group_label">Gender</label><br>
-            <span th:each="y: ${#numbers.sequence(0,1)}">
+            <span th:each="y: ${genders}">
                <label><input type="radio" name="petGender" value="Female"
                              th:field="*{petGender}" th:value="${y}"><span th:text="${y}">Female</span></label>
             </span>
@@ -56,6 +56,8 @@
     </form>
     <p><a href="Index.html" th:href="@{Index}">Index</a></p>
 </main>
-
+<footer>
+    Sheridan College / Mehmet GUNEY
+</footer>
 </body>
 </html>
