@@ -50,6 +50,7 @@ public class PetDataController {
                         "form", new PetForm());
         modelAndView.addObject("kinds", kinds);
         modelAndView.addObject("genders", genders);
+
         return modelAndView;
     }
     @PostMapping("/InsertPet")

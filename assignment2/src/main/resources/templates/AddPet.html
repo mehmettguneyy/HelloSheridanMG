@@ -12,12 +12,17 @@
     <form method="post"
           th:action="@{InsertPet}" action="ConfirmInsert.html"
           th:object="${form}">
-
-
+        <div th:if="${#fields.hasErrors('*')}">
+            <h3 class="error">Input Errors</h3>
+            <ul>
+                <li th:each="e: ${#fields.errors('*')}" th:text="${e}"
+                    class="error">Input Error</li>
+            </ul>
+        </div>
         <h2>Pet Name</h2>
         <p>
             <label for="first" class="group_label">Pet Name</label><br>
-            <input id="first" type="text" th:required="required" th:field="*{petName}"/>
+            <input id="first" type="text"  th:field="*{petName}"/>
             <span th:if="${#fields.hasErrors('petName')}"
                   class="error">&larr;&nbsp;<span th:errors="*{petName}">Pet Name Error</span></span>
         </p>
@@ -35,7 +40,7 @@
             <label class="group_label">Gender</label><br>
             <span th:each="y: ${genders}">
                <label><input type="radio" name="petGender" value="Female"
-                             th:field="*{petGender}" th:value="${y}"><span th:text="${y}">Female</span></label>
+                             th:field="*{petGender}" id="female" th:value="${y}"><span th:text="${y}">Female</span></label>
             </span>
             <!--/*-->
             <label><input type="radio" name="petGender" value="Male">Male</label>
@@ -59,5 +64,8 @@
 <footer>
     Sheridan College / Mehmet GUNEY
 </footer>
+<script>
+    document.getElementById("female").setAttribute("checked","checked");
+</script>
 </body>
 </html>

@@ -1,6 +1,8 @@
 package sheridan.guneym.assignment2.model;
 
-import javax.validation.constraints.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 public class PetForm implements Serializable {
