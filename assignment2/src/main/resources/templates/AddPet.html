@@ -22,7 +22,7 @@
         <h2>Pet Name</h2>
         <p>
             <label for="first" class="group_label">Pet Name</label><br>
-            <input id="first" type="text"  th:field="*{petName}"/>
+            <input id="first" type="text"  th:field="*{petName}" th:required="required"/>
             <span th:if="${#fields.hasErrors('petName')}"
                   class="error">&larr;&nbsp;<span th:errors="*{petName}">Pet Name Error</span></span>
         </p>

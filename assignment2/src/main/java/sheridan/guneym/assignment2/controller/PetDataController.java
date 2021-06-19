@@ -1,3 +1,5 @@
+//Mehmet GUNEY / Sheridan College /991598109
+
 package sheridan.guneym.assignment2.controller;
 
 import org.slf4j.Logger;
@@ -59,7 +61,6 @@ public class PetDataController {
             BindingResult bindingResult,
             Model model){
         logger.trace("insertPet() is called");
-        // checking for the input validation errors
         if (bindingResult.hasErrors()) {
             logger.trace("input validation errors");
 
